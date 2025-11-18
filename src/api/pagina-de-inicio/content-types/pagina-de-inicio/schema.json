@@ -28,6 +28,12 @@
         "videos",
         "audios"
       ]
+    },
+    "hero": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.hero-section"
+      ]
     }
   }
 }

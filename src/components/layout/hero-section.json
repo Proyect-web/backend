@@ -26,6 +26,15 @@
       "type": "component",
       "component": "component.link",
       "repeatable": false
+    },
+    "hero_background": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "files"
+      ]
     }
   },
   "config": {}

@@ -451,6 +451,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
+    navbar_logo: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.DynamicZone<['layout.hero-section']>;
     title: Schema.Attribute.String;

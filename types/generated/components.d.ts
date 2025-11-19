@@ -21,6 +21,7 @@ export interface LayoutHeroSection extends Struct.ComponentSchema {
     displayName: 'Hero section';
   };
   attributes: {
+    hero_background: Schema.Attribute.Media<'images' | 'videos' | 'files'>;
     hero_imagen: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &

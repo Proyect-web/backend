@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_layout_banner_sections",
+  "info": {
+    "displayName": "Banner Section",
+    "icon": "sun"
+  },
+  "options": {},
+  "attributes": {
+    "banner_title": {
+      "type": "string"
+    },
+    "banner_subtitle": {
+      "type": "text"
+    },
+    "banner_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "component",
+      "component": "component.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_highlights_sections",
+  "info": {
+    "displayName": "Highlights Section",
+    "icon": "magic"
+  },
+  "options": {},
+  "attributes": {
+    "cards": {
+      "type": "component",
+      "component": "elements.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

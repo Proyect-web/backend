@@ -22,7 +22,10 @@
       "components": [
         "layout.hero-section",
         "layout.highlights-section",
-        "layout.banner-section"
+        "layout.banner-section",
+        "layout.featured-products",
+        "layout.carousel-section",
+        "layout.download-app-section"
       ]
     },
     "navbar_logo": {

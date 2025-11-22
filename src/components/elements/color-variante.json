@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_elements_color_variantes",
+  "info": {
+    "displayName": "Color variante",
+    "icon": "paint"
+  },
+  "options": {},
+  "attributes": {
+    "color_name": {
+      "type": "string"
+    },
+    "color_hex": {
+      "type": "string"
+    },
+    "product_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -29,6 +29,36 @@ export interface ElementsCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsColorVariante extends Struct.ComponentSchema {
+  collectionName: 'components_elements_color_variantes';
+  info: {
+    displayName: 'Color variante';
+    icon: 'paint';
+  };
+  attributes: {
+    color_hex: Schema.Attribute.String;
+    color_name: Schema.Attribute.String;
+    product_images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface ElementsFeatureSlide extends Struct.ComponentSchema {
+  collectionName: 'components_elements_feature_slides';
+  info: {
+    displayName: 'Feature Slide';
+    icon: 'crown';
+  };
+  attributes: {
+    card_info: Schema.Attribute.Component<'elements.card', false>;
+    feature_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
 export interface LayoutBannerSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_banner_sections';
   info: {
@@ -36,12 +66,50 @@ export interface LayoutBannerSection extends Struct.ComponentSchema {
     icon: 'sun';
   };
   attributes: {
+    banner_badge: Schema.Attribute.String;
     banner_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     banner_subtitle: Schema.Attribute.Text;
     banner_title: Schema.Attribute.String;
     link: Schema.Attribute.Component<'component.link', false>;
+  };
+}
+
+export interface LayoutCarouselSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_carousel_sections';
+  info: {
+    displayName: 'Carousel Section';
+    icon: 'picture';
+  };
+  attributes: {
+    slides: Schema.Attribute.Component<'elements.feature-slide', true>;
+  };
+}
+
+export interface LayoutDownloadAppSection extends Struct.ComponentSchema {
+  collectionName: 'components_layout_download_app_sections';
+  info: {
+    displayName: 'Download App Section';
+    icon: 'phone';
+  };
+  attributes: {
+    app_image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Schema.Attribute.Text;
+    download_link: Schema.Attribute.Component<'component.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutFeaturedProducts extends Struct.ComponentSchema {
+  collectionName: 'components_layout_featured_products';
+  info: {
+    displayName: 'Featured Products';
+    icon: 'command';
+  };
+  attributes: {
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    section_title: Schema.Attribute.String;
   };
 }
 
@@ -78,7 +146,12 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'component.link': ComponentLink;
       'elements.card': ElementsCard;
+      'elements.color-variante': ElementsColorVariante;
+      'elements.feature-slide': ElementsFeatureSlide;
       'layout.banner-section': LayoutBannerSection;
+      'layout.carousel-section': LayoutCarouselSection;
+      'layout.download-app-section': LayoutDownloadAppSection;
+      'layout.featured-products': LayoutFeaturedProducts;
       'layout.hero-section': LayoutHeroSection;
       'layout.highlights-section': LayoutHighlightsSection;
     }

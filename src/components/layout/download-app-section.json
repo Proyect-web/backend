@@ -1,18 +1,18 @@
 {
-  "collectionName": "components_layout_banner_sections",
+  "collectionName": "components_layout_download_app_sections",
   "info": {
-    "displayName": "Banner Section",
-    "icon": "sun"
+    "displayName": "Download App Section",
+    "icon": "phone"
   },
   "options": {},
   "attributes": {
-    "banner_title": {
+    "title": {
       "type": "string"
     },
-    "banner_subtitle": {
+    "description": {
       "type": "text"
     },
-    "banner_image": {
+    "app_image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -22,13 +22,10 @@
         "audios"
       ]
     },
-    "link": {
+    "download_link": {
       "type": "component",
       "component": "component.link",
       "repeatable": false
-    },
-    "banner_badge": {
-      "type": "string"
     }
   },
   "config": {}

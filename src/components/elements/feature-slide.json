@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_feature_slides",
+  "info": {
+    "displayName": "Feature Slide",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "feature_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "card_info": {
+      "type": "component",
+      "component": "elements.card",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

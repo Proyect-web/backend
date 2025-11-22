@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_carousel_sections",
+  "info": {
+    "displayName": "Carousel Section",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "component": "elements.feature-slide",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

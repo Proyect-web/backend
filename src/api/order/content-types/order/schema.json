@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_cliente": {
+      "type": "string"
+    },
+    "email_cliente": {
+      "type": "email"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "direccion_envio": {
+      "type": "text"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "PENDIENTE",
+        "PAGADO",
+        "ENVIADO",
+        "CANCELADO"
+      ]
+    },
+    "metodo_pago": {
+      "type": "string"
+    },
+    "items_json": {
+      "type": "json"
+    },
+    "id_referencia_externa": {
+      "type": "string"
+    }
+  }
+}

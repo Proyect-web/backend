@@ -470,6 +470,41 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
+  collectionName: 'orders';
+  info: {
+    displayName: 'Order';
+    pluralName: 'orders';
+    singularName: 'order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    direccion_envio: Schema.Attribute.Text;
+    email_cliente: Schema.Attribute.Email;
+    estado: Schema.Attribute.Enumeration<
+      ['PENDIENTE', 'PAGADO', 'ENVIADO', 'CANCELADO']
+    >;
+    id_referencia_externa: Schema.Attribute.String;
+    items_json: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
+      Schema.Attribute.Private;
+    metodo_pago: Schema.Attribute.String;
+    nombre_cliente: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    telefono: Schema.Attribute.String;
+    total: Schema.Attribute.Decimal;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPaginaDeInicioPaginaDeInicio
   extends Struct.SingleTypeSchema {
   collectionName: 'pagina_de_inicios';
@@ -1079,6 +1114,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::order.order': ApiOrderOrder;
       'api::pagina-de-inicio.pagina-de-inicio': ApiPaginaDeInicioPaginaDeInicio;
       'api::post.post': ApiPostPost;
       'api::product.product': ApiProductProduct;
